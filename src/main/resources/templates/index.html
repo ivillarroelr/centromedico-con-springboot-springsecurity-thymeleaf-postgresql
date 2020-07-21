@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CENTRO MEDICO</title>
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{fonts/ionicons.min.css}">
+    <link rel="stylesheet" th:href="@{css/Login-Form-Clean.css}">
+    <link rel="stylesheet" th:href="@{css/styles.css}">
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h2>Bienvenido <span th:text="${username}"></span></h2>
+        <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="false">
+            <input type="submit" value="Sign Out"/>
+         </form> 
+      </div>
+    <script th:src="@{js/jquery.min.js}"></script>
+    <script th:src="@{js/bootstrap.min.js}"></script>
+</body>
+
+</html>
