@@ -17,7 +17,6 @@ import javax.persistence.Table;
 public class Especialidad {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idEspecialidad;
 
     @Column(name = "nombre_especialidad", nullable = false)

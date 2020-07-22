@@ -8,3 +8,19 @@ VALUES(1, 'ivillarroelr', '$2a$04$wMZKNRu.HWMsvYJ.vHU9deZMJHNOMEyCh7ddhvtYBLxvE2
  VALUES(1,2);
 INSERT INTO authorities_users(usuario_id, authority_id)
  VALUES(1,1);
+
+ INSERT INTO especialidad(id_especialidad, nombre_especialidad, descripcion_especialidad)
+ VALUES(1,'PEDIATRIA','');
+
+
+ INSERT INTO especialidad(id_especialidad, nombre_especialidad, descripcion_especialidad)
+ VALUES(2,'MEDICO GENERAL','');
+
+  INSERT INTO especialidad(id_especialidad, nombre_especialidad, descripcion_especialidad)
+ VALUES(3,'NEUROLOGO','');
+ 
+  INSERT INTO especialidad(id_especialidad, nombre_especialidad, descripcion_especialidad)
+ VALUES(4,'GASTROENTEROLOGO','');
+
+  INSERT INTO especialidad(id_especialidad, nombre_especialidad, descripcion_especialidad)
+ VALUES(5,'OFTALMOLOGO','');
