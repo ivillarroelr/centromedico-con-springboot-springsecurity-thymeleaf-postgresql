@@ -37,6 +37,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
         .passwordParameter("password")
         .and()
         .logout().permitAll().logoutSuccessUrl("/logout");
+
+        http.headers().frameOptions().disable();
     }
     BCryptPasswordEncoder bCryptPasswordEncoder;
     //Crea el encriptador de contraseñas	

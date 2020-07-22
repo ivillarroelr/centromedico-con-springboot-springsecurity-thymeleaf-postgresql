@@ -1,11 +1,11 @@
 <div class="bg-light border-right" id="sidebar-wrapper">
-    <div class="sidebar-heading">CENTRO MEDICO 2 </div>
-    <div class="list-group list-group-flush">
+    <div class="sidebar-heading"> CENTRO MEDICO 2 </div>
+    <div id="sidebar" class="list-group list-group-flush">
       <a th:href="@{/medicos}" class="list-group-item list-group-item-action bg-light"><i class="icon ion-ios-briefcase"></i> MEDICOS</a>
       <a th:href="@{/pacientes}" class="list-group-item list-group-item-action bg-light"><i class="icon ion-android-contacts"></i> PACIENTES</a>
-      <a href="#" class="list-group-item list-group-item-action bg-light"><i class="icon ion-android-calendar"></i> ATENCIONES</a>
+      <a th:href="@{/atenciones}" class="list-group-item list-group-item-action bg-light"><i class="icon ion-android-calendar"></i> ATENCIONES</a>
       <a href="#" class="list-group-item list-group-item-action bg-light"><i class="icon ion-android-clipboard"></i> EXAMENES</a>
       <a href="#" class="list-group-item list-group-item-action bg-light"><i class="icon ion-ios-compose-outline"></i> RECETAS</a>
-      <a href="#" class="list-group-item list-group-item-action bg-light font-weight-bold"><i class="icon ion-ios-heart"></i> SOBRE NOSOTROS</a>
+      <a th:href="@{/index}" class="list-group-item list-group-item-action bg-light"><i class="icon ion-ios-heart"></i> SOBRE NOSOTROS</a>
     </div>
   </div>

@@ -15,14 +15,3 @@ $("#menu-toggle").click(function(e) {
   e.preventDefault();
   $("#wrapper").toggleClass("toggled");
 });
-
-$(document).ready(function ($) {
-    var url = window.location.href;
-    var activePage = url;
-    $('#sidebar a').each(function () {
-        var linkPage = this.href;
-        if (activePage == linkPage) {
-            $(this).closest("a").addClass("active");
-        }
-    });
-});
