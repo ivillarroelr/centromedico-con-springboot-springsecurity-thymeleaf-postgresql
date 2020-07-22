@@ -18,14 +18,33 @@
             <h5 class="text-center mb-5">APP CENTRO MEDICO</h5>
             <div class="form-group"><input class="form-control" type="text" name="username" placeholder="User"></div>
             <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Ingresar</button></div><a class="forgot" href="#">Recuperar contraseña</a>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" id="button">Ingresar</button></div><a class="forgot" href="#">Recuperar contraseña</a>
             <div th:if="${booleanerror}">
                 <small th:text="${error}"></small>
             </div>
+            <div th:if="${logout}">
+            </div>
         </form>
     </div>
+    <script th:inline="javascript">
+            var flag = [[${logout}]]; 
+            var mensaje = [[${mensaje}]]; 
+            window.onload = function() {
+                if(!flag)
+                    return; 
+                    logout(); 
+            };
+            function logout(){
+                Swal.fire(
+                    'Adios!',
+                    mensaje,
+                    'success'
+                    )
+            }
+        </script>
     <script th:src="@{js/jquery.min.js}"></script>
     <script th:src="@{js/bootstrap.min.js}"></script>
+    <script th:src="@{js/sweetalert2.js}"></script>
 </body>
 
 </html>

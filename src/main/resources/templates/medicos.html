@@ -17,7 +17,7 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">CENTRO MEDICO 2 </div>
       <div class="list-group list-group-flush">
-        <a th:href="@{/medicos}" class="list-group-item list-group-item-action bg-light"><i class="icon ion-ios-briefcase"></i> MEDICOS</a>
+        <a th:href="@{/medicos}" class="list-group-item list-group-item-action bg-light font-weight-bold"><i class="icon ion-ios-briefcase"></i> MEDICOS</a>
         <a th:href="@{/pacientes}" class="list-group-item list-group-item-action bg-light"><i class="icon ion-android-contacts"></i> PACIENTES</a>
         <a href="#" class="list-group-item list-group-item-action bg-light"><i class="icon ion-android-calendar"></i> ATENCIONES</a>
         <a href="#" class="list-group-item list-group-item-action bg-light"><i class="icon ion-android-clipboard"></i> EXAMENES</a>
@@ -54,10 +54,15 @@
         </div>
       </nav>
 
-      <div class="container-fluid">
-        <h1 class="mt-4">Simple Sidebar</h1>
-        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
+      <div class="container-fluid"> <!-- BODY LOL -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">VER MEDICOS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/nuevomedico}">NUEVO MEDICO</a>
+            </li>
+          </ul>      
       </div>
     </div>
     <!-- /#page-content-wrapper -->
