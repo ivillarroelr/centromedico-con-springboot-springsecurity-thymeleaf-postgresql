@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>CENTRO MEDICO</title>
-    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{fonts/ionicons.min.css}">
-    <link rel="stylesheet" th:href="@{css/Login-Form-Clean.css}">
-    <link rel="stylesheet" th:href="@{css/styles.css}">
+<head th:replace="/fragments/header :: head">
 </head>
 
 <body>
@@ -22,29 +15,10 @@
             <div th:if="${booleanerror}">
                 <small th:text="${error}"></small>
             </div>
-            <div th:if="${logout}">
-            </div>
         </form>
     </div>
-    <script th:inline="javascript">
-            var flag = [[${logout}]]; 
-            var mensaje = [[${mensaje}]]; 
-            window.onload = function() {
-                if(!flag)
-                    return; 
-                    logout(); 
-            };
-            function logout(){
-                Swal.fire(
-                    'Adios!',
-                    mensaje,
-                    'success'
-                    )
-            }
-        </script>
     <script th:src="@{js/jquery.min.js}"></script>
     <script th:src="@{js/bootstrap.min.js}"></script>
-    <script th:src="@{js/sweetalert2.js}"></script>
 </body>
 
 </html>

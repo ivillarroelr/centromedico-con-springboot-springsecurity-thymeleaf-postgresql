@@ -24,3 +24,12 @@ INSERT INTO authorities_users(usuario_id, authority_id)
 
   INSERT INTO especialidad(id_especialidad, nombre_especialidad, descripcion_especialidad)
  VALUES(5,'OFTALMOLOGO','');
+
+   INSERT INTO especialidad(id_especialidad, nombre_especialidad, descripcion_especialidad)
+ VALUES(6,'OTORRINOLARINGOLOGO','');
+
+ INSERT INTO medico(rut, apellido, nombre, telefono, id_especialidad)
+ VALUES(170411927, 'VILLARROEL', 'IVAN','+56-9-68712186',1);
+
+  INSERT INTO paciente(rut, apellido, nombre, edad)
+ VALUES(191112223, 'RIVERA', 'FERNANDA',1);

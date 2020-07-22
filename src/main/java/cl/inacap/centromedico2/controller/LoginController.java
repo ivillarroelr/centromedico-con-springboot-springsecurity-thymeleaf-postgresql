@@ -8,19 +8,12 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
-import cl.inacap.centromedico2.dto.UsuarioDTO;
 
 @Controller
 public class LoginController {
 
-    @GetMapping({ "/"})
+    @GetMapping({ "/", "/login"})
     public String login() {
         return "login";
     }  
@@ -39,7 +32,7 @@ public class LoginController {
     ModelAndView model = new ModelAndView();
     model.addObject("logout", true);
     model.addObject("mensaje", "Usted ha salido exitosamente");
-    model.setViewName("login");
+    model.setViewName("redirect:/login");
     return model;
 }
 

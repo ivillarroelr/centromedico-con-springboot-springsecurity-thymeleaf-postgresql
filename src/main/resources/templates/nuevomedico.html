@@ -1,57 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>CENTRO MEDICO</title>
-    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{fonts/ionicons.min.css}">
-    <link rel="stylesheet" th:href="@{css/Login-Form-Clean.css}">
-    <link rel="stylesheet" th:href="@{css/styles.css}">
+<head th:replace="/fragments/header :: head">
 </head>
 
+<body>
 <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
-    <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">CENTRO MEDICO 2 </div>
-      <div class="list-group list-group-flush">
-        <a th:href="@{/medicos}" class="list-group-item list-group-item-action bg-light font-weight-bold"><i class="icon ion-ios-briefcase"></i> MEDICOS</a>
-        <a th:href="@{/pacientes}" class="list-group-item list-group-item-action bg-light"><i class="icon ion-android-contacts"></i> PACIENTES</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="icon ion-android-calendar"></i> ATENCIONES</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="icon ion-android-clipboard"></i> EXAMENES</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="icon ion-ios-compose-outline"></i> RECETAS</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="icon ion-ios-heart"></i> SOBRE NOSOTROS</a>
-      </div>
+    <div th:replace="/fragments/sidebar :: div">
     </div>
-    <!-- /#sidebar-wrapper -->
-
+    
     <!-- Page Content -->
     <div id="page-content-wrapper">
         
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-success" id="menu-toggle"><i class="icon ion-ios-loop"> </i>Menu</button>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Opciones
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Ver perfil</a>
-                <a class="dropdown-item" href="#">Editar perfil</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" th:href="@{/logout}">Cerrar sesion</a>
-              </div>
-            </li>
-          </ul>
-        </div>
+      <!-- Navbar -->
+      <nav th:replace="/fragments/navbar :: nav">
       </nav>
 
       <div class="container-fluid"> <!-- BODY LOL -->
@@ -62,7 +26,45 @@
             <li class="nav-item">
               <a class="nav-link active" href="#">NUEVO MEDICO</a>
             </li>
-          </ul>      
+          </ul>    
+      <div class="container">
+        <div class="row mt-5">
+        <div class="col col-md-1"></div>
+        <div class="col col-md-10">
+          <form method="post" th:action="@{/crearmedico}">
+            <div class="form-group">
+              <label for="rut">Rut medico</label>
+              <input type="number" class="form-control" id="rut" name="rut">
+            </div>
+            <div class="form-group">
+              <label for="nombre">Nombre medico</label>
+              <input type="text" class="form-control" id="nombre" name="nombre">
+            </div>
+            <div class="form-group">
+              <label for="apellido">Apellido medico</label>
+              <input type="text" class="form-control" id="apellido" name="apellido">
+            </div>
+            <div class="form-group">
+              <label for="especialidad">Seleccione especialidad</label>
+              <select class="form-control" id="especialidad" name="especialidad">
+                <option th:each="especialidad : ${especialidades}"
+                        th:value="${especialidad.getIdEspecialidad()}"
+                        th:text="${especialidad.getNombreEspecialidad()}"></option>
+            </select>
+            </div>
+            <label for="telefono">Numero telefonico</label>
+            <div class="input-group">  
+              <div class="input-group-prepend">
+                <div class="input-group-text">+569</div>
+              </div>
+              <input type="text" class="form-control" id="telefono" name="telefono">
+            </div>
+            <button type="submit" class="btn btn-lg btn-success mt-3">Enviar</button>
+          </form>
+        </div>
+        <div class="col col-md-1"></div>
+      </div>
+      </div>
       </div>
     </div>
     <!-- /#page-content-wrapper -->
@@ -75,15 +77,7 @@
   <!-- Bootstrap core JavaScript -->
   <script th:src="@{js/jquery.min.js}"></script>
   <script th:src="@{js/bootstrap.min.js}"></script>
-
-  <!-- Menu Toggle Script -->
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-    
-  </script>
-
+  <script th:src="@{js/sweetalert2.js}"></script>
+  <script th:src="@{js/custom.js}"></script>
 </body>
 </html>
