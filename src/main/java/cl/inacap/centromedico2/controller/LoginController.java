@@ -18,6 +18,15 @@ public class LoginController {
         return "login";
     }  
 
+    @GetMapping({ "/loginerror"})
+    public ModelAndView loginerror() {
+        ModelAndView model = new ModelAndView();
+        model.addObject("booleanerror", true);
+        model.addObject("mensaje", "Credenciales invalidas");
+        model.setViewName("login");
+        return model;
+    }  
+
     @GetMapping({ "/index"})
     public String index() {
         return "index";

@@ -11,10 +11,11 @@
             <h5 class="text-center mb-5">APP CENTRO MEDICO</h5>
             <div class="form-group"><input class="form-control" type="text" name="username" placeholder="User"></div>
             <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" id="button">Ingresar</button></div><a class="forgot" href="#">Recuperar contraseña</a>
-            <div th:if="${booleanerror}">
-                <small th:text="${error}"></small>
+            <div class="text-center" th:if="${booleanerror}">
+                <small style="color: red; font-weight: bold;" th:text="${mensaje}"></small>
             </div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" id="button">Ingresar</button></div><a class="forgot" href="#">Recuperar contraseña</a>
+
         </form>
     </div>
     <script th:src="@{js/jquery.min.js}"></script>
